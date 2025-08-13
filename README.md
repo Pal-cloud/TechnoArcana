@@ -1,6 +1,18 @@
 # TechnoArcana - Tarot STEM
 
-Una aplicación web en React que permite visualizar cartas de tarot dedicadas a las mujeres destacadas en ciencia y tecnología. 
+Una aplicación```
+src/
+├── components/           # Componentes reutilizables
+│   ├── Header/          # Navegación principal con logo personal
+│   ├── TarotCard/       # Componente de carta individual con efectos
+│   ├── Footer/          # Footer con enlaces y créditos
+│   └── SoundControl/    # Control de efectos de sonido
+├── contexts/            # Contextos globales
+│   └── SoundContext.jsx # Contexto para compartir estado de audio
+├── hooks/               # Hooks personalizados
+│   └── useSoundEffectsSimple.js # Hook para manejo de audio
+├── pages/               # Páginas de la aplicación
+│   ├── HomePage.jsx     # Página principal con todas las cartasct que permite visualizar cartas de tarot dedicadas a las mujeres destacadas en ciencia y tecnología. 
 
 ## 🌟 Características
 
@@ -8,12 +20,15 @@ Una aplicación web en React que permite visualizar cartas de tarot dedicadas a 
 - **Página principal**: Muestra todas las cartas boca abajo
 - **Detalle de carta**: Al hacer clic, navega a una página con información detallada
 - **API Integration**: Consume la API pública de cartas de tarot
+- **Efectos de sonido**: Sonidos atmosféricos al interactuar con las cartas
+- **Control de audio**: Botón para activar/desactivar efectos de sonido
 
 ### Nivel 2: Lectura de cartas (Pasado, Presente, Futuro)
 - **Selección de tres cartas**: Permite seleccionar exactamente 3 cartas
 - **Posiciones específicas**: Asigna cartas a Pasado, Presente y Futuro
 - **Significados**: Muestra el significado y la diosa contemporánea asociada
 - **Reinicio**: Permite comenzar una nueva lectura
+- **Experiencia inmersiva**: Efectos de sonido y visuales durante la selección
 
 ## 🚀 Instalación y uso
 
@@ -43,19 +58,50 @@ Una aplicación web en React que permite visualizar cartas de tarot dedicadas a 
 ```
 src/
 ├── components/           # Componentes reutilizables
-│   ├── Header/          # Navegación principal
-│   ├── TarotCard/       # Componente de carta individual
-│   └── Footer/          # Footer con enlaces y créditos
+│   ├── Header/          # Navegación principal con logo personal
+│   ├── TarotCard/       # Componente de carta individual con efectos
+│   ├── Footer/          # Footer con enlaces y créditos
+│   └── SoundControl/    # Control de efectos de sonido
+├── hooks/               # Hooks personalizados
+│   └── useSoundEffects.js # Hook para manejo de audio
 ├── pages/               # Páginas de la aplicación
 │   ├── HomePage.jsx     # Página principal con todas las cartas
 │   ├── CardDetailPage.jsx # Detalle de carta individual
 │   └── ReadingPage.jsx  # Página de lectura de tres cartas
 ├── services/            # Servicios para API
 │   └── tarotService.js  # Funciones para consumir la API
+├── public/              # Archivos estáticos
+│   ├── images/          # Logo personal y recursos visuales
+│   ├── card-hover.mp3   # Efecto de sonido hover
+│   └── card-click.mp3   # Efecto de sonido click
 ├── App.jsx              # Componente principal
 ├── router.jsx           # Configuración de rutas
 └── main.jsx            # Punto de entrada
 ```
+
+## 🎵 Efectos de Sonido
+
+La aplicación incluye efectos de sonido atmosféricos para mejorar la experiencia del usuario:
+
+### Sonidos disponibles:
+- **Hover**: Sonido sutil al pasar el mouse sobre una carta
+- **Click**: Sonido más pronunciado al hacer clic en una carta
+
+### Configuración de archivos de audio:
+1. **Ubicación**: `public/sounds/`
+2. **Formatos soportados**: MP3, WAV, OGG
+3. **Archivos requeridos**:
+   - `card-hover.mp3` - Sonido de hover (0.2-0.5s)
+   - `card-click.mp3` - Sonido de click (0.3-0.8s)
+
+### Características técnicas:
+- **Control de volumen**: Volumen moderado por defecto (30%)
+- **Manejo de errores**: Funciona sin archivos de audio
+- **Precargar**: Los sonidos se precargan para reproducción instantánea
+- **Control de usuario**: Botón flotante para activar/desactivar
+
+### Fuentes recomendadas:
+- [Pixabay.com](https://pixabay.com/)
 
 ## 🔗 API
 

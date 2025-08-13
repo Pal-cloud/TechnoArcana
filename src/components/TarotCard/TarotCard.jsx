@@ -1,12 +1,24 @@
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import { useSoundContext } from '../../contexts/SoundContext'
 import './TarotCard.css'
 
 const TarotCard = ({ card, isRevealed = false, onClick, position = null }) => {
+  const { playSound, audioLoaded } = useSoundContext()
+
   const handleClick = () => {
+    playSound('click')
     if (onClick) {
       onClick(card)
     }
+  }
+
+  const handleMouseEnter = () => {
+    playSound('hover')
+  }
+
+  const handleLinkClick = () => {
+    playSound('click')
   }
 
   const cardContent = isRevealed ? (
@@ -38,6 +50,7 @@ const TarotCard = ({ card, isRevealed = false, onClick, position = null }) => {
       <div 
         className={`tarot-card ${isRevealed ? 'revealed' : 'hidden'}`}
         onClick={handleClick}
+        onMouseEnter={handleMouseEnter}
       >
         {cardContent}
       </div>
@@ -48,6 +61,8 @@ const TarotCard = ({ card, isRevealed = false, onClick, position = null }) => {
     <Link 
       to={`/card/${card.id}`} 
       className={`tarot-card ${isRevealed ? 'revealed' : 'hidden'}`}
+      onMouseEnter={handleMouseEnter}
+      onClick={handleLinkClick}
     >
       {cardContent}
     </Link>
