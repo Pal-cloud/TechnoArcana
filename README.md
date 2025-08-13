@@ -44,7 +44,8 @@ Una aplicación web en React que permite visualizar cartas de tarot dedicadas a 
 src/
 ├── components/           # Componentes reutilizables
 │   ├── Header/          # Navegación principal
-│   └── TarotCard/       # Componente de carta individual
+│   ├── TarotCard/       # Componente de carta individual
+│   └── Footer/          # Footer con enlaces y créditos
 ├── pages/               # Páginas de la aplicación
 │   ├── HomePage.jsx     # Página principal con todas las cartas
 │   ├── CardDetailPage.jsx # Detalle de carta individual
@@ -126,6 +127,12 @@ La aplicación está optimizada para:
 - Prevención de selecciones duplicadas
 - Visualización clara de posiciones
 - Opción de reiniciar lectura
+
+### Footer
+- Información de FactoriaF5 con enlace oficial
+- Enlaces personales a GitHub y LinkedIn
+- Diseño atractivo con gradientes y efectos hover
+- Responsive para todos los dispositivos
 
 ## 🙏 Agradecimientos
 
