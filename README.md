@@ -57,9 +57,10 @@ src/
 ├── services/            # Servicios para API
 │   └── tarotService.js  # Funciones para consumir la API
 ├── public/              # Archivos estáticos
-│   ├── images/          # Logo personal y recursos visuales
-│   ├── card-hover.mp3   # Efecto de sonido hover
-│   └── card-click.mp3   # Efecto de sonido click
+│   └── images/          # Logo personal y recursos visuales
+│       ├── logo-pal.png # Logo personal
+│       ├── card-hover.mp3 # Efecto de sonido hover
+│       └── card-click.mp3 # Efecto de sonido click
 ├── App.jsx              # Componente principal
 ├── router.jsx           # Configuración de rutas
 └── main.jsx            # Punto de entrada
@@ -74,7 +75,7 @@ La aplicación incluye efectos de sonido atmosféricos para mejorar la experienc
 - **Click**: Sonido más pronunciado al hacer clic en una carta
 
 ### Configuración de archivos de audio:
-1. **Ubicación**: `public/sounds/`
+1. **Ubicación**: `public/images/`
 2. **Formatos soportados**: MP3, WAV, OGG
 3. **Archivos requeridos**:
    - `card-hover.mp3` - Sonido de hover (0.2-0.5s)
