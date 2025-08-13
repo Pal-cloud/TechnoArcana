@@ -30,6 +30,20 @@ const Footer = () => {
 
         <div className="footer-social">
           <h4>Conéctate conmigo</h4>
+          
+          {/* Logo personal como marca elegante */}
+          <div className="personal-brand">
+            <img 
+              src="/images/logo-pal.png" 
+              alt="Pal Brand" 
+              className="personal-logo-footer"
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
+            <span className="brand-text">Desarrollado por Pal</span>
+          </div>
+          
           <div className="social-links">
             <a 
               href="https://github.com/Pal-cloud" 

@@ -5,6 +5,18 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-content">
+        {/* Logo personal como sello en la esquina */}
+        <div className="personal-seal">
+          <img 
+            src="/images/logo-pal.png" 
+            alt="Pal Logo" 
+            className="personal-logo-header"
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
+        </div>
+        
         <h1 className="header-title">
           <Link to="/">TechnoArcana</Link>
         </h1>
