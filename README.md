@@ -1,19 +1,5 @@
 # TechnoArcana - Tarot STEM
 
-Una aplicación```
-src/
-├── components/           # Componentes reutilizables
-│   ├── Header/          # Navegación principal con logo personal
-│   ├── TarotCard/       # Componente de carta individual con efectos
-│   ├── Footer/          # Footer con enlaces y créditos
-│   └── SoundControl/    # Control de efectos de sonido
-├── contexts/            # Contextos globales
-│   └── SoundContext.jsx # Contexto para compartir estado de audio
-├── hooks/               # Hooks personalizados
-│   └── useSoundEffectsSimple.js # Hook para manejo de audio
-├── pages/               # Páginas de la aplicación
-│   ├── HomePage.jsx     # Página principal con todas las cartasct que permite visualizar cartas de tarot dedicadas a las mujeres destacadas en ciencia y tecnología. 
-
 ## 🌟 Características
 
 ### Nivel 1: Visualización básica de cartas
