@@ -48,8 +48,10 @@ src/
 │   ├── TarotCard/       # Componente de carta individual con efectos
 │   ├── Footer/          # Footer con enlaces y créditos
 │   └── SoundControl/    # Control de efectos de sonido
+├── contexts/            # Contextos globales
+│   └── SoundContext.jsx # Contexto para compartir estado de audio
 ├── hooks/               # Hooks personalizados
-│   └── useSoundEffects.js # Hook para manejo de audio
+│   └── useSoundEffectsSimple.js # Hook para manejo de audio
 ├── pages/               # Páginas de la aplicación
 │   ├── HomePage.jsx     # Página principal con todas las cartas
 │   ├── CardDetailPage.jsx # Detalle de carta individual
@@ -57,8 +59,9 @@ src/
 ├── services/            # Servicios para API
 │   └── tarotService.js  # Funciones para consumir la API
 ├── public/              # Archivos estáticos
-│   └── images/          # Logo personal y recursos visuales
-│       ├── logo-pal.png # Logo personal
+│   ├── images/          # Logo personal y recursos visuales
+│   │   └── logo-pal.png # Logo personal
+│   └── sounds/          # Efectos de sonido
 │       ├── card-hover.mp3 # Efecto de sonido hover
 │       └── card-click.mp3 # Efecto de sonido click
 ├── App.jsx              # Componente principal
@@ -75,7 +78,7 @@ La aplicación incluye efectos de sonido atmosféricos para mejorar la experienc
 - **Click**: Sonido más pronunciado al hacer clic en una carta
 
 ### Configuración de archivos de audio:
-1. **Ubicación**: `public/images/`
+1. **Ubicación**: `public/sounds/`
 2. **Formatos soportados**: MP3, WAV, OGG
 3. **Archivos requeridos**:
    - `card-hover.mp3` - Sonido de hover (0.2-0.5s)

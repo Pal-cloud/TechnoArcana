@@ -4,9 +4,10 @@ import { useSoundContext } from '../../contexts/SoundContext'
 import './TarotCard.css'
 
 const TarotCard = ({ card, isRevealed = false, onClick, position = null }) => {
-  const { playSound, audioLoaded } = useSoundContext()
+  const { playSound, audioLoaded, initializeAudio } = useSoundContext()
 
   const handleClick = () => {
+    initializeAudio() // Inicializar audio en el primer click
     playSound('click')
     if (onClick) {
       onClick(card)
@@ -18,6 +19,7 @@ const TarotCard = ({ card, isRevealed = false, onClick, position = null }) => {
   }
 
   const handleLinkClick = () => {
+    initializeAudio() // Inicializar audio en el primer click
     playSound('click')
   }
 
