@@ -12,7 +12,8 @@ const useSoundEffectsSimple = () => {
       try {
         const sounds = {
           hover: '/sounds/card-hover.mp3',
-          click: '/sounds/card-click.mp3'
+          click: '/sounds/card-click.mp3',
+          logo: '/sounds/raven.mp3'
         }
 
         const loadPromises = Object.entries(sounds).map(async ([key, src]) => {

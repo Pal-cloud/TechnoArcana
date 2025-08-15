@@ -1,6 +1,13 @@
+import { useSoundContext } from '../../contexts/SoundContext'
 import './Footer.css'
 
 const Footer = () => {
+  const { playSound, initializeAudio } = useSoundContext()
+
+  const handleLogoHover = () => {
+    initializeAudio() // Inicializar audio si es necesario
+    playSound('logo')
+  }
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -37,6 +44,7 @@ const Footer = () => {
               src="/images/logo-pal.png" 
               alt="Pal Brand" 
               className="personal-logo-footer"
+              onMouseEnter={handleLogoHover}
               onError={(e) => {
                 e.target.style.display = 'none';
               }}

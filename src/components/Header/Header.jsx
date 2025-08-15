@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom'
+import { useSoundContext } from '../../contexts/SoundContext'
 import './Header.css'
 
 const Header = () => {
+  const { playSound, initializeAudio } = useSoundContext()
+
+  const handleLogoHover = () => {
+    initializeAudio() // Inicializar audio si es necesario
+    playSound('logo')
+  }
   return (
     <header className="header">
       <div className="header-content">
@@ -11,6 +18,7 @@ const Header = () => {
             src="/images/logo-pal.png" 
             alt="Pal Logo" 
             className="personal-logo-header"
+            onMouseEnter={handleLogoHover}
             onError={(e) => {
               e.target.style.display = 'none';
             }}

@@ -2,7 +2,10 @@
 
 ## 🌟 Características
 
-### Nivel 1: Visualización básica de cartas
+### Niv   └── sounds/          # Efectos de sonido
+       ├── card-hover.mp3 # Efecto de sonido hover
+       ├── card-click.mp3 # Efecto de sonido click
+       └── raven.mp3    # Efecto de sonido logo personal1: Visualización básica de cartas
 - **Página principal**: Muestra todas las cartas boca abajo
 - **Detalle de carta**: Al hacer clic, navega a una página con información detallada
 - **API Integration**: Consume la API pública de cartas de tarot
@@ -76,6 +79,7 @@ La aplicación incluye efectos de sonido atmosféricos para mejorar la experienc
 ### Sonidos disponibles:
 - **Hover**: Sonido sutil al pasar el mouse sobre una carta
 - **Click**: Sonido más pronunciado al hacer clic en una carta
+- **Logo**: Sonido especial al pasar el mouse sobre el logo personal
 
 ### Configuración de archivos de audio:
 1. **Ubicación**: `public/sounds/`
