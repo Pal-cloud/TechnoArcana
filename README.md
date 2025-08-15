@@ -2,10 +2,7 @@
 
 ## 🌟 Características
 
-### Niv   └── sounds/          # Efectos de sonido
-       ├── card-hover.mp3 # Efecto de sonido hover
-       ├── card-click.mp3 # Efecto de sonido click
-       └── raven.mp3    # Efecto de sonido logo personal1: Visualización básica de cartas
+### Nivel 1: Visualización básica de cartas
 - **Página principal**: Muestra todas las cartas boca abajo
 - **Detalle de carta**: Al hacer clic, navega a una página con información detallada
 - **API Integration**: Consume la API pública de cartas de tarot
@@ -63,10 +60,12 @@ src/
 │   └── tarotService.js  # Funciones para consumir la API
 ├── public/              # Archivos estáticos
 │   ├── images/          # Logo personal y recursos visuales
-│   │   └── logo-pal.png # Logo personal
+│   │   ├── favicon.png  # Favicon personalizado
+│   │   └── logo-pal.png # Logo personal (header y footer)
 │   └── sounds/          # Efectos de sonido
 │       ├── card-hover.mp3 # Efecto de sonido hover
-│       └── card-click.mp3 # Efecto de sonido click
+│       ├── card-click.mp3 # Efecto de sonido click
+│       └── raven.mp3    # Efecto de sonido logo personal
 ├── App.jsx              # Componente principal
 ├── router.jsx           # Configuración de rutas
 └── main.jsx            # Punto de entrada
@@ -125,6 +124,24 @@ https://6872278c76a5723aacd3cbb3.mockapi.io/api/v1/tarot
   }
 }
 ```
+
+## 🎨 Identidad Visual
+
+### Logo Personal
+- **Logo**: `logo-pal.png` utilizado en header y footer
+- **Ubicación**: `public/images/logo-pal.png`
+- **Formato**: PNG optimizado para múltiples tamaños
+
+### Favicon Personalizado
+- **Archivo**: `favicon.png` 
+- **Ubicación**: `public/images/favicon.png`
+- **Formato**: PNG optimizado para navegadores
+- **Integración**: Configurado en `index.html` con soporte para Apple Touch Icon
+
+### Efectos de Sonido del Logo
+- **Hover**: Sonido especial `raven.mp3` al pasar el mouse sobre el logo personal
+- **Integración**: Tanto en header como footer
+- **Control**: Respeta la configuración global de sonidos
 
 ## 🛠️ Tecnologías utilizadas
 
