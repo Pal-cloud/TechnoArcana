@@ -47,7 +47,8 @@ src/
 │   ├── Header/          # Navegación principal con logo personal
 │   ├── TarotCard/       # Componente de carta individual con efectos
 │   ├── Footer/          # Footer con enlaces y créditos
-│   └── SoundControl/    # Control de efectos de sonido
+│   ├── SoundControl/    # Control de efectos de sonido
+│   └── FloatingElements/ # Elementos flotantes de fondo (astrológicos y científicos)
 ├── contexts/            # Contextos globales
 │   └── SoundContext.jsx # Contexto para compartir estado de audio
 ├── hooks/               # Hooks personalizados
@@ -96,6 +97,34 @@ La aplicación incluye efectos de sonido atmosféricos para mejorar la experienc
 ### Fuentes recomendadas:
 - [Pixabay.com](https://pixabay.com/)
 
+## 🌟 Elementos Flotantes de Fondo
+
+La aplicación incluye elementos flotantes atmosféricos que se mueven continuamente por la pantalla:
+
+### Elementos Astrológicos:
+- **Estrellas** ⭐🌟 - Con efectos de brillo dorado
+- **Luna** 🌙 - Con resplandor plateado suave
+- **Signos Zodiacales** ♈♉♊♋♌♍♎♏♐♑♒♓ - Con brillo púrpura místico
+
+### Elementos Científicos:
+- **Átomo** ⚛️ - Símbolo de la física cuántica
+- **ADN** 🧬 - Representando la biología molecular
+- **Microscopio** 🔬 - Símbolo de la investigación científica
+- **Elementos de laboratorio** 🧪⚗️ - Química y experimentación
+
+### Elementos Místicos:
+- **Bola de cristal** 🔮 - Conexión con el tarot
+- **Estrellas fugaces** 🌠💫 - Movimiento dinámico
+- **Galaxias** 🌌 - Profundidad cósmica
+
+### Características Técnicas:
+- **Animación fluida**: Movimiento vertical continuo con rotación
+- **Efectos de brillo**: Text-shadow con colores temáticos
+- **Responsive**: Menos elementos en dispositivos móviles
+- **Accesibilidad**: Respeta `prefers-reduced-motion`
+- **Rendimiento**: Optimizado con `will-change` y `z-index` negativo
+- **No interferencia**: `pointer-events: none` para no bloquear interacciones
+
 ## 🔗 API
 
 La aplicación consume la API pública de cartas de tarot:
@@ -124,24 +153,6 @@ https://6872278c76a5723aacd3cbb3.mockapi.io/api/v1/tarot
   }
 }
 ```
-
-## 🎨 Identidad Visual
-
-### Logo Personal
-- **Logo**: `logo-pal.png` utilizado en header y footer
-- **Ubicación**: `public/images/logo-pal.png`
-- **Formato**: PNG optimizado para múltiples tamaños
-
-### Favicon Personalizado
-- **Archivo**: `favicon.png` 
-- **Ubicación**: `public/images/favicon.png`
-- **Formato**: PNG optimizado para navegadores
-- **Integración**: Configurado en `index.html` con soporte para Apple Touch Icon
-
-### Efectos de Sonido del Logo
-- **Hover**: Sonido especial `raven.mp3` al pasar el mouse sobre el logo personal
-- **Integración**: Tanto en header como footer
-- **Control**: Respeta la configuración global de sonidos
 
 ## 🛠️ Tecnologías utilizadas
 

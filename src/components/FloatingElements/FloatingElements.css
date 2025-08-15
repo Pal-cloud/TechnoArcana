@@ -1,0 +1,167 @@
+.floating-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.floating-element {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.3;
+  animation: float var(--random-duration, 20s) linear infinite;
+  animation-delay: var(--delay, 0s);
+  left: var(--random-x, 50%);
+  transform: translateX(-50%);
+  will-change: transform, opacity;
+}
+
+/* Animación de flotación principal */
+@keyframes float {
+  0% {
+    transform: translateX(-50%) translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Estilos específicos por tipo */
+.floating-element.star {
+  color: #ffd700;
+  text-shadow: 0 0 10px #ffd700;
+  animation-duration: 18s;
+}
+
+.floating-element.moon {
+  color: #e6f3ff;
+  text-shadow: 0 0 15px #e6f3ff;
+  font-size: 2rem;
+  animation-duration: 25s;
+}
+
+.floating-element.zodiac {
+  color: #9966ff;
+  text-shadow: 0 0 8px #9966ff;
+  font-size: 1.8rem;
+  animation-duration: 22s;
+}
+
+.floating-element.science {
+  color: #00ffff;
+  text-shadow: 0 0 12px #00ffff;
+  font-size: 1.6rem;
+  animation-duration: 20s;
+}
+
+.floating-element.mystic {
+  color: #ff69b4;
+  text-shadow: 0 0 10px #ff69b4;
+  font-size: 1.4rem;
+  animation-duration: 16s;
+}
+
+.floating-element.sparkle {
+  color: #ffffff;
+  text-shadow: 0 0 8px #ffffff;
+  font-size: 1.2rem;
+  animation-duration: 14s;
+}
+
+.floating-element.comet {
+  color: #ffff00;
+  text-shadow: 0 0 15px #ffff00;
+  font-size: 1.8rem;
+  animation-duration: 12s;
+}
+
+.floating-element.shooting-star {
+  color: #87ceeb;
+  text-shadow: 0 0 12px #87ceeb;
+  font-size: 1.6rem;
+  animation-duration: 10s;
+}
+
+.floating-element.galaxy {
+  color: #dda0dd;
+  text-shadow: 0 0 20px #dda0dd;
+  font-size: 2.2rem;
+  animation-duration: 30s;
+}
+
+/* Variaciones para diferentes velocidades */
+.floating-element:nth-child(odd) {
+  animation-direction: reverse;
+}
+
+.floating-element:nth-child(3n) {
+  animation-duration: calc(var(--random-duration, 20s) * 0.8);
+}
+
+.floating-element:nth-child(5n) {
+  animation-duration: calc(var(--random-duration, 20s) * 1.2);
+}
+
+/* Efectos de brillo pulsante para algunos elementos */
+.floating-element.star,
+.floating-element.science {
+  animation: float var(--random-duration, 20s) linear infinite,
+             pulse 3s ease-in-out infinite;
+  animation-delay: var(--delay, 0s), calc(var(--delay, 0s) + 1s);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Responsive - Menos elementos en móviles */
+@media (max-width: 768px) {
+  .floating-element:nth-child(n+16) {
+    display: none;
+  }
+  
+  .floating-element {
+    font-size: 1.2rem;
+  }
+  
+  .floating-element.moon,
+  .floating-element.galaxy {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-element:nth-child(n+11) {
+    display: none;
+  }
+  
+  .floating-element {
+    font-size: 1rem;
+    opacity: 0.2;
+  }
+}
+
+/* Reducir movimiento para usuarios que prefieren menos animación */
+@media (prefers-reduced-motion: reduce) {
+  .floating-element {
+    animation-duration: 60s;
+    opacity: 0.1;
+  }
+}
