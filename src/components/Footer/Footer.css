@@ -156,6 +156,64 @@
   box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
 }
 
+.clickable-logo {
+  cursor: pointer !important;
+  position: relative;
+}
+
+.clickable-logo::after {
+  content: '✉️';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 14px;
+  background: rgba(255, 215, 0, 0.9);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
+}
+
+.clickable-logo:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Estilos personalizados para SweetAlert2 */
+.tarot-popup {
+  border-radius: 20px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3) !important;
+  border: 2px solid rgba(255, 215, 0, 0.3) !important;
+}
+
+.tarot-title {
+  font-family: 'Segoe UI', sans-serif !important;
+  font-weight: 600 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+  color: #fff !important;
+}
+
+.tarot-button {
+  border-radius: 25px !important;
+  padding: 12px 30px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4) !important;
+  transition: all 0.3s ease !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.tarot-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6) !important;
+}
+
 .brand-text {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.9);

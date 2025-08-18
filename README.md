@@ -142,13 +142,15 @@ https://6872278c76a5723aacd3cbb3.mockapi.io/api/v1/tarot
 - **Vite**: Build tool y servidor de desarrollo
 - **CSS3**: Estilos con gradientes y animaciones
 - **Fetch API**: Para consumir la API REST
+- **SweetAlert2**: Modales elegantes y personalizados
+- **Animate.css**: Animaciones CSS suaves
 
 ## 📱 Responsive Design
 
 La aplicación está optimizada para:
-- Desktop (1200px+)
-- Tablet (768px - 1199px)
-- Mobile (< 768px)
+- Desktop 
+- Tablet 
+- Mobile 
 
 ## ✨ Características destacadas
 
@@ -180,9 +182,8 @@ La aplicación está optimizada para:
 ### Footer
 - Información de FactoriaF5 con enlace oficial
 - Enlaces personales a GitHub y LinkedIn
-- Diseño atractivo con gradientes y efectos hover
-- Responsive para todos los dispositivos
-
+- **Logo personal clickeable**: Modal elegante con SweetAlert2 que copia el email al portapapeles
+  
 ## 🙏 Agradecimientos
 
 Este proyecto fue desarrollado en colaboración con el equipo formativo **FactoriaF5 Barcelona** 🌟

@@ -1,4 +1,5 @@
 import { useSoundContext } from '../../contexts/SoundContext'
+import Swal from 'sweetalert2'
 import './Footer.css'
 
 const Footer = () => {
@@ -7,6 +8,89 @@ const Footer = () => {
   const handleLogoHover = () => {
     initializeAudio() // Inicializar audio si es necesario
     playSound('logo')
+  }
+
+  const handleLogoClick = () => {
+    console.log('Logo clicked - showing contact info...')
+    
+    // Copiar email al portapapeles y mostrar confirmación con SweetAlert2
+    const email = 'pp.factoriaf5@gmail.com'
+    
+    if (navigator.clipboard && window.isSecureContext) {
+      // Usar la API moderna del portapapeles
+      navigator.clipboard.writeText(email).then(() => {
+        showSuccessAlert(email)
+      }).catch(() => {
+        showEmailAlert(email)
+      })
+    } else {
+      // Fallback para navegadores antiguos
+      showEmailAlert(email)
+    }
+  }
+
+  const showSuccessAlert = (email) => {
+    Swal.fire({
+      title: '📧 ¡Email Copiado!',
+      html: `
+        <div style="text-align: center; font-family: 'Segoe UI', sans-serif;">
+          <p style="font-size: 1.1rem; margin: 20px 0; color: #ffd700; font-weight: bold; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
+            <strong>${email}</strong>
+          </p>
+          <p style="color: rgba(255,255,255,0.95); margin: 15px 0; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,0.4);">
+            Ya puedes pegarlo en tu cliente de email favorito ✨
+          </p>
+        </div>
+      `,
+      icon: 'success',
+      confirmButtonText: '¡Perfecto!',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      color: '#fff',
+      confirmButtonColor: '#ffd700',
+      customClass: {
+        popup: 'tarot-popup',
+        title: 'tarot-title',
+        confirmButton: 'tarot-button'
+      },
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
+  }
+
+  const showEmailAlert = (email) => {
+    Swal.fire({
+      title: '📧 Mi Email de Contacto',
+      html: `
+        <div style="text-align: center; font-family: 'Segoe UI', sans-serif;">
+          <p style="font-size: 1.2rem; margin: 20px 0; color: #ffd700; font-weight: bold; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
+            ${email}
+          </p>
+          <p style="color: rgba(255,255,255,0.95); margin: 15px 0; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,0.4);">
+            ¡Copia este email para escribirme! 🌟
+          </p>
+        </div>
+      `,
+      icon: 'info',
+      confirmButtonText: 'Entendido',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      color: '#fff',
+      confirmButtonColor: '#ffd700',
+      customClass: {
+        popup: 'tarot-popup',
+        title: 'tarot-title',
+        confirmButton: 'tarot-button'
+      },
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
   }
   return (
     <footer className="footer">
@@ -43,8 +127,14 @@ const Footer = () => {
             <img 
               src="/images/logo-pal.png" 
               alt="Pal Brand" 
-              className="personal-logo-footer"
+              className="personal-logo-footer clickable-logo"
               onMouseEnter={handleLogoHover}
+              onClick={(e) => {
+                e.preventDefault()
+                handleLogoClick()
+              }}
+              style={{ cursor: 'pointer' }}
+              title="Click para copiar mi email"
               onError={(e) => {
                 e.target.style.display = 'none';
               }}
