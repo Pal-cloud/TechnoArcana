@@ -155,7 +155,8 @@ La aplicación está optimizada para:
 ## ✨ Características destacadas
 
 - **Interfaz intuitiva**: Diseño moderno con gradientes y efectos visuales
-- **Animaciones suaves**: Transiciones y hover effects
+- **Imágenes optimizadas**: Combinación de imágenes flotantes y enmarcadas según el contexto
+- **Animaciones suaves**: Transiciones y hover effects elegantes
 - **Estado persistente**: Manejo eficiente del estado con React hooks
 - **Componentes modulares**: Código reutilizable y mantenible
 - **Responsive**: Adaptable a todos los dispositivos
@@ -170,7 +171,7 @@ La aplicación está optimizada para:
 ### Detalle de carta
 - Información completa del arcano
 - Datos de la diosa contemporánea
-- Imágenes con créditos y licencias
+- **Imagen principal flotante**: Sin marco, adaptándose a las proporciones naturales
 - Navegación de vuelta
 
 ### Lectura de cartas

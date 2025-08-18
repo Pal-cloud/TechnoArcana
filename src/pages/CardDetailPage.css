@@ -54,30 +54,65 @@
 }
 
 .card-image-container {
-  background: white;
   border-radius: 20px;
-  padding: 1.5rem;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
 }
 
 .card-image {
   width: 100%;
   height: auto;
-  border-radius: 15px;
-  margin-bottom: 1rem;
+  border-radius: 20px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card-image:hover {
+  transform: scale(1.02);
 }
 
 .image-credit {
   text-align: center;
-  opacity: 0.7;
+  opacity: 0.9;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-credit small {
+  color: #667eea;
 }
 
 .image-credit a {
   color: #667eea;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .image-credit a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+.goddess-image-credit {
+  text-align: center;
+  opacity: 0.7;
+}
+
+.goddess-image-credit small {
+  color: #333;
+}
+
+.goddess-image-credit a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.goddess-image-credit a:hover {
+  color: #764ba2;
   text-decoration: underline;
 }
 
@@ -103,9 +138,11 @@
   color: #ffd700;
 }
 
-.card-description p {
+.card-description p,
+.goddess-description p {
   line-height: 1.8;
   font-size: 1.1rem;
+  color: white;
 }
 
 .goddess-content {
@@ -114,24 +151,31 @@
   gap: 1.5rem;
 }
 
-.goddess-image-container {
+.goddess-image-wrapper {
+  align-self: flex-start;
   background: white;
   border-radius: 15px;
   padding: 1rem;
-  align-self: flex-start;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.goddess-image-container {
+  border-radius: 10px;
   max-width: 200px;
+  overflow: hidden;
 }
 
 .goddess-image {
   width: 100%;
   height: auto;
   border-radius: 10px;
+  display: block;
+  transition: transform 0.3s ease;
   margin-bottom: 0.5rem;
 }
 
-.goddess-description p {
-  line-height: 1.8;
-  font-size: 1.1rem;
+.goddess-image:hover {
+  transform: scale(1.02);
 }
 
 .loading,
@@ -193,9 +237,9 @@
     flex-direction: column;
   }
   
-  .goddess-image-container {
-    max-width: 150px;
+  .goddess-image-wrapper {
     align-self: center;
+    max-width: 150px;
   }
   
   .card-description,

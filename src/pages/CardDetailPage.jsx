@@ -71,12 +71,12 @@ const CardDetailPage = () => {
                 alt={card.arcaneName}
                 className="card-image"
               />
-              <div className="image-credit">
-                <small>
-                  Imagen por: {card.arcaneImage.author} | 
-                  Licencia: {card.arcaneImage.license}
-                </small>
-              </div>
+            </div>
+            <div className="image-credit">
+              <small>
+                Imagen por: {card.arcaneImage.author} | 
+                Licencia: {card.arcaneImage.license}
+              </small>
             </div>
           </div>
 
@@ -89,13 +89,15 @@ const CardDetailPage = () => {
             <div className="goddess-section">
               <h2>Diosa Contemporánea: {card.goddessName}</h2>
               <div className="goddess-content">
-                <div className="goddess-image-container">
-                  <img 
-                    src={card.goddessImage.imageSrc} 
-                    alt={card.goddessName}
-                    className="goddess-image"
-                  />
-                  <div className="image-credit">
+                <div className="goddess-image-wrapper">
+                  <div className="goddess-image-container">
+                    <img 
+                      src={card.goddessImage.imageSrc} 
+                      alt={card.goddessName}
+                      className="goddess-image"
+                    />
+                  </div>
+                  <div className="goddess-image-credit">
                     <small>
                       <a 
                         href={card.goddessImage.licenseUrl} 
