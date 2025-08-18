@@ -172,6 +172,8 @@ La aplicación está optimizada para:
 - Información completa del arcano
 - Datos de la diosa contemporánea
 - **Imagen principal flotante**: Sin marco, adaptándose a las proporciones naturales
+- **Sección de diosa centrada**: Imagen y descripción visualmente alineadas al centro
+- **Efectos visuales**: Hover effects suaves y sombras elegantes
 - Navegación de vuelta
 
 ### Lectura de cartas

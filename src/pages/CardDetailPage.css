@@ -148,21 +148,28 @@
 .goddess-content {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
+  align-items: center;
 }
 
 .goddess-image-wrapper {
-  align-self: flex-start;
+  align-self: center;
   background: white;
   border-radius: 15px;
   padding: 1rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
 }
 
 .goddess-image-container {
   border-radius: 10px;
-  max-width: 200px;
+  max-width: 250px;
   overflow: hidden;
+}
+
+.goddess-description {
+  text-align: center;
+  max-width: 600px;
 }
 
 .goddess-image {
@@ -235,11 +242,19 @@
   
   .goddess-content {
     flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
   }
   
   .goddess-image-wrapper {
     align-self: center;
-    max-width: 150px;
+    max-width: 180px;
+  }
+  
+  .goddess-description {
+    text-align: center;
+    max-width: 100%;
+    padding: 0 1rem;
   }
   
   .card-description,
