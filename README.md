@@ -101,29 +101,10 @@ La aplicación incluye efectos de sonido atmosféricos para mejorar la experienc
 
 La aplicación incluye elementos flotantes atmosféricos que se mueven continuamente por la pantalla:
 
-### Elementos Astrológicos:
-- **Estrellas** ⭐🌟 - Con efectos de brillo dorado
-- **Luna** 🌙 - Con resplandor plateado suave
-- **Signos Zodiacales** ♈♉♊♋♌♍♎♏♐♑♒♓ - Con brillo púrpura místico
-
-### Elementos Científicos:
-- **Átomo** ⚛️ - Símbolo de la física cuántica
-- **ADN** 🧬 - Representando la biología molecular
-- **Microscopio** 🔬 - Símbolo de la investigación científica
-- **Elementos de laboratorio** 🧪⚗️ - Química y experimentación
-
-### Elementos Místicos:
-- **Bola de cristal** 🔮 - Conexión con el tarot
-- **Estrellas fugaces** 🌠💫 - Movimiento dinámico
-- **Galaxias** 🌌 - Profundidad cósmica
-
 ### Características Técnicas:
-- **Animación fluida**: Movimiento vertical continuo con rotación
-- **Efectos de brillo**: Text-shadow con colores temáticos
-- **Responsive**: Menos elementos en dispositivos móviles
-- **Accesibilidad**: Respeta `prefers-reduced-motion`
-- **Rendimiento**: Optimizado con `will-change` y `z-index` negativo
-- **No interferencia**: `pointer-events: none` para no bloquear interacciones
+
+- **Eliminación preventiva**: Los elementos se eliminan 200ms antes de completar su animación
+- **Sin acumulación**: Garantiza que no se acumulen elementos en ninguna parte de la pantalla
 
 ## 🔗 API
 
