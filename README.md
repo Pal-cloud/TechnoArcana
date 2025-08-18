@@ -44,7 +44,7 @@
 ```
 src/
 ├── components/           # Componentes reutilizables
-│   ├── Header/          # Navegación principal con logo personal
+│   ├── Header/          # Navegación principal con botones destacados y logo personal
 │   ├── TarotCard/       # Componente de carta individual con efectos
 │   ├── Footer/          # Footer con enlaces y créditos
 │   ├── SoundControl/    # Control de efectos de sonido
@@ -154,7 +154,6 @@ La aplicación está optimizada para:
 
 ## ✨ Características destacadas
 
-- **Interfaz intuitiva**: Diseño moderno con gradientes y efectos visuales
 - **Imágenes optimizadas**: Combinación de imágenes flotantes y enmarcadas según el contexto
 - **Animaciones suaves**: Transiciones y hover effects elegantes
 - **Estado persistente**: Manejo eficiente del estado con React hooks
@@ -165,6 +164,7 @@ La aplicación está optimizada para:
 
 ### Página de inicio
 - Grid responsive de cartas boca abajo
+- **Navegación destacada**: Botones "Cartas" y "Lectura" claramente visibles con efectos dorados
 - Loading states y manejo de errores
 - Navegación intuitiva
 
