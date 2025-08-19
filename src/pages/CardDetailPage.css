@@ -35,6 +35,61 @@
   background-clip: text;
 }
 
+/* Navegación entre cartas */
+.card-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  text-decoration: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.nav-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+  background: linear-gradient(45deg, #764ba2, #667eea);
+}
+
+.nav-button:active {
+  transform: scale(0.95);
+}
+
+.card-counter {
+  color: #ffd700;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  text-align: center;
+  white-space: nowrap;
+}
+
 .arcane-number {
   font-size: 1.2rem;
   opacity: 0.8;
@@ -229,6 +284,26 @@
 @media (max-width: 768px) {
   .card-detail-header h1 {
     font-size: 2rem;
+  }
+  
+  .card-navigation {
+    gap: 1rem;
+    margin: 1rem 0 1.5rem 0;
+    padding: 0.8rem;
+    flex-wrap: wrap;
+  }
+  
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .card-counter {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+    order: 3;
+    flex-basis: 100%;
   }
   
   .card-detail-content {

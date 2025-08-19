@@ -1,20 +1,47 @@
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
-import { getCardById } from '../services/tarotService.js'
+import { useParams, Link, useNavigate } from 'react-router-dom'
+import { getCardById, getAllCards } from '../services/tarotService.js'
 import './CardDetailPage.css'
 
 const CardDetailPage = () => {
   const { id } = useParams()
+  const navigate = useNavigate()
   const [card, setCard] = useState(null)
+  const [allCards, setAllCards] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
+  // Función para convertir números a romanos
+  const toRoman = (num) => {
+    const values = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+    const romans = ['XX', 'XIX', 'XVIII', 'XVII', 'XVI', 'XV', 'XIV', 'XIII', 'XII', 'XI', 'X', 'IX', 'VIII', 'VII', 'VI', 'V', 'IV', 'III', 'II', 'I', '0']
+    
+    const numInt = parseInt(num)
+    const index = values.indexOf(numInt)
+    return index !== -1 ? romans[index] : num
+  }
+
+  // Función para obtener el índice actual y los IDs de navegación
+  const getNavigationData = () => {
+    if (!allCards.length || !card) return { currentIndex: -1, prevCardId: null, nextCardId: null }
+    
+    const currentIndex = allCards.findIndex(c => c.id === card.id)
+    const prevCardId = currentIndex > 0 ? allCards[currentIndex - 1].id : allCards[allCards.length - 1].id
+    const nextCardId = currentIndex < allCards.length - 1 ? allCards[currentIndex + 1].id : allCards[0].id
+    
+    return { currentIndex, prevCardId, nextCardId }
+  }
+
   useEffect(() => {
-    const fetchCard = async () => {
+    const fetchData = async () => {
       try {
         setLoading(true)
-        const data = await getCardById(id)
-        setCard(data)
+        const [cardData, cardsData] = await Promise.all([
+          getCardById(id),
+          getAllCards()
+        ])
+        setCard(cardData)
+        setAllCards(cardsData)
       } catch (err) {
         setError('Error al cargar la carta. Por favor, intenta de nuevo.')
         console.error(err)
@@ -23,7 +50,7 @@ const CardDetailPage = () => {
       }
     }
 
-    fetchCard()
+    fetchData()
   }, [id])
 
   if (loading) {
@@ -56,11 +83,34 @@ const CardDetailPage = () => {
       <Link to="/" className="back-link">
         ← Volver a las cartas
       </Link>
+
+      {/* Navegación entre cartas - Movida aquí para mejor usabilidad */}
+      {allCards.length > 0 && (
+        <div className="card-navigation">
+          <Link 
+            to={`/card/${getNavigationData().prevCardId}`} 
+            className="nav-button nav-button-prev"
+            title="Carta anterior"
+          >
+            ←
+          </Link>
+          <span className="card-counter">
+            Arcano {toRoman(card.arcaneNumber)}
+          </span>
+          <Link 
+            to={`/card/${getNavigationData().nextCardId}`} 
+            className="nav-button nav-button-next"
+            title="Carta siguiente"
+          >
+            →
+          </Link>
+        </div>
+      )}
       
       <div className="card-detail">
         <div className="card-detail-header">
           <h1>{card.arcaneName}</h1>
-          <p className="arcane-number">Arcano Mayor {card.arcaneNumber}</p>
+          <p className="arcane-number">Arcano Mayor {toRoman(card.arcaneNumber)}</p>
         </div>
 
         <div className="card-detail-content">
