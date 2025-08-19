@@ -14,9 +14,8 @@
 ### Nivel 2: Lectura de cartas (Pasado, Presente, Futuro)
 - **Selección de tres cartas**: Permite seleccionar exactamente 3 cartas
 - **Posiciones específicas**: Asigna cartas a Pasado, Presente y Futuro
-- **Significados**: Muestra el significado y la diosa contemporánea asociada
+- **Placeholders visuales**: Las cartas seleccionadas se marcan con huecos dorados que muestran qué carta fue elegida y para qué posición
 - **Reinicio**: Permite comenzar una nueva lectura
-- **Experiencia inmersiva**: Efectos de sonido y visuales durante la selección
 
 ## 🚀 Instalación y uso
 
@@ -161,7 +160,9 @@ La aplicación está optimizada para:
 - **Animaciones suaves**: Transiciones y hover effects elegantes
 - **Estado persistente**: Manejo eficiente del estado con React hooks
 - **Componentes modulares**: Código reutilizable y mantenible
-- **Responsive**: Adaptable a todos los dispositivos
+- **Experiencia visual superior**: Placeholders dorados, modales elegantes y feedback inmediato
+- **Navegación intuitiva**: Sistema de flechas, números romanos y orientación constante
+- **Responsive**: Adaptable a todos los dispositivos con optimizaciones específicas
 
 ## 🎯 Navegación y Visualización Avanzada
 
@@ -186,6 +187,11 @@ La aplicación está optimizada para:
 
 ### Lectura de cartas
 - Selección guiada de 3 cartas
+- **Sistema de placeholders inteligente**: Las cartas seleccionadas se marcan con huecos dorados distintivos
+- **Información contextual**: Cada placeholder muestra el nombre de la carta y la posición asignada (Pasado, Presente, Futuro)
+- **Grid completo persistente**: Todas las cartas permanecen visibles para mejor orientación
+- **Indicadores visuales claros**: Iconos de confirmación (✓) y bordes dorados punteados
+- **Efectos hover**: Interacciones suaves en placeholders y cartas disponibles
 - Prevención de selecciones duplicadas
 - Visualización clara de posiciones
 - Opción de reiniciar lectura

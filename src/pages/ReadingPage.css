@@ -174,6 +174,64 @@
   margin: 0 auto;
 }
 
+/* Placeholder para cartas seleccionadas */
+.selected-card-placeholder {
+  width: 180px;
+  height: 280px;
+  border-radius: 15px;
+  border: 3px dashed #ffd700;
+  background: rgba(255, 215, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.selected-card-placeholder:hover {
+  border-color: #ffeb3b;
+  background: rgba(255, 215, 0, 0.15);
+  transform: scale(1.02);
+}
+
+.placeholder-content {
+  text-align: center;
+  padding: 1rem;
+  color: #ffd700;
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #ffd700, #ffeb3b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 4px rgba(255, 215, 0, 0.3));
+}
+
+.placeholder-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #ffd700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.position-label {
+  font-size: 0.9rem;
+  color: #ffeb3b;
+  opacity: 0.9;
+  font-style: italic;
+}
+
 .loading,
 .error {
   display: flex;
@@ -239,6 +297,24 @@
   .cards-grid {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 1rem;
+  }
+  
+  .selected-card-placeholder {
+    width: 140px;
+    height: 220px;
+  }
+
+  .placeholder-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-name {
+    font-size: 1rem;
+  }
+
+  .position-label {
+    font-size: 0.8rem;
   }
   
   .card-meaning {

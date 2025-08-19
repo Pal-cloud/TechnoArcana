@@ -84,6 +84,23 @@ const ReadingPage = () => {
     return cards.filter(card => !selectedCardIds.includes(card.id))
   }
 
+  // Función para verificar si una carta está seleccionada
+  const isCardSelected = (cardId) => {
+    return Object.values(selectedCards).some(
+      selectedCard => selectedCard && selectedCard.id === cardId
+    )
+  }
+
+  // Función para obtener la posición donde fue seleccionada la carta
+  const getCardPosition = (cardId) => {
+    for (const [position, card] of Object.entries(selectedCards)) {
+      if (card && card.id === cardId) {
+        return positions[position]
+      }
+    }
+    return null
+  }
+
   if (loading) {
     return (
       <div className="page-container">
@@ -175,19 +192,40 @@ const ReadingPage = () => {
         )}
       </div>
 
-      {/* Grid de cartas disponibles */}
+      {/* Grid de cartas disponibles y seleccionadas */}
       {!isReadingComplete && (
         <div className="available-cards">
           <h3>Cartas Disponibles</h3>
           <div className="cards-grid">
-            {getAvailableCards().map((card) => (
-              <TarotCard 
-                key={card.id} 
-                card={card} 
-                isRevealed={false}
-                onClick={handleCardSelect}
-              />
-            ))}
+            {cards.map((card) => {
+              const cardIsSelected = isCardSelected(card.id)
+              const cardPosition = getCardPosition(card.id)
+              
+              if (cardIsSelected) {
+                // Mostrar hueco marcado para carta seleccionada
+                return (
+                  <div key={card.id} className="selected-card-placeholder">
+                    <div className="placeholder-content">
+                      <div className="placeholder-icon">✓</div>
+                      <div className="placeholder-text">
+                        <span className="card-name">{card.arcaneName}</span>
+                        <span className="position-label">Seleccionada para: {cardPosition}</span>
+                      </div>
+                    </div>
+                  </div>
+                )
+              } else {
+                // Mostrar carta disponible
+                return (
+                  <TarotCard 
+                    key={card.id} 
+                    card={card} 
+                    isRevealed={false}
+                    onClick={handleCardSelect}
+                  />
+                )
+              }
+            })}
           </div>
         </div>
       )}
