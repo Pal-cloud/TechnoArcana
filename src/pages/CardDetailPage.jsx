@@ -10,6 +10,7 @@ const CardDetailPage = () => {
   const [allCards, setAllCards] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false)
 
   // Función para convertir números a romanos
   const toRoman = (num) => {
@@ -31,6 +32,29 @@ const CardDetailPage = () => {
     
     return { currentIndex, prevCardId, nextCardId }
   }
+
+  // Funciones para el modal de imagen
+  const openImageModal = () => setIsImageModalOpen(true)
+  const closeImageModal = () => setIsImageModalOpen(false)
+
+  // Cerrar modal con tecla Escape
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        closeImageModal()
+      }
+    }
+
+    if (isImageModalOpen) {
+      document.addEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'hidden' // Prevenir scroll del body
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'unset'
+    }
+  }, [isImageModalOpen])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -115,12 +139,16 @@ const CardDetailPage = () => {
 
         <div className="card-detail-content">
           <div className="card-detail-left">
-            <div className="card-image-container">
+            <div className="card-image-container clickable-container" onClick={openImageModal}>
               <img 
                 src={card.arcaneImage.imageSrc} 
                 alt={card.arcaneName}
-                className="card-image"
+                className="card-image clickable-image"
+                title="Haz clic para ampliar la imagen"
               />
+              <div className="zoom-icon">
+                🔍
+              </div>
             </div>
             <div className="image-credit">
               <small>
@@ -167,6 +195,33 @@ const CardDetailPage = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal para ampliar imagen */}
+      {isImageModalOpen && (
+        <div className="image-modal-overlay" onClick={closeImageModal}>
+          <div className="image-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button 
+              className="image-modal-close"
+              onClick={closeImageModal}
+              title="Cerrar (Esc)"
+            >
+              ×
+            </button>
+            <img 
+              src={card.arcaneImage.imageSrc} 
+              alt={card.arcaneName}
+              className="image-modal-img"
+            />
+            <div className="image-modal-info">
+              <h3>{card.arcaneName}</h3>
+              <p>Arcano Mayor {toRoman(card.arcaneNumber)}</p>
+              <small>
+                Imagen por: {card.arcaneImage.author} | Licencia: {card.arcaneImage.license}
+              </small>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

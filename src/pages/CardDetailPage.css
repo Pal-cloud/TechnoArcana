@@ -112,6 +112,48 @@
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
   overflow: hidden;
+  position: relative;
+}
+
+/* Contenedor clickeable para la imagen */
+.clickable-container {
+  cursor: pointer;
+  position: relative;
+}
+
+.clickable-container:hover .card-image {
+  transform: scale(1.02);
+}
+
+.clickable-container:hover {
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
+/* Icono de zoom */
+.zoom-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.6rem;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.clickable-container:hover .zoom-icon {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .card-image {
@@ -124,6 +166,109 @@
 
 .card-image:hover {
   transform: scale(1.02);
+}
+
+/* Imagen clickeable */
+.clickable-image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Modal para ampliar imagen */
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  backdrop-filter: blur(5px);
+}
+
+.image-modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.image-modal-close:hover {
+  background: rgba(255, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.image-modal-img {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  display: block;
+}
+
+.image-modal-info {
+  padding: 1.5rem;
+  text-align: center;
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+}
+
+.image-modal-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.image-modal-info p {
+  margin: 0 0 1rem 0;
+  color: #667eea;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.image-modal-info small {
+  color: #666;
+  font-size: 0.9rem;
 }
 
 .image-credit {
@@ -314,6 +459,43 @@
     padding: 0.4rem 0.8rem;
     order: 3;
     flex-basis: 100%;
+  }
+  
+  .clickable-container:hover .zoom-icon,
+  .zoom-icon {
+    font-size: 1rem;
+    padding: 0.4rem;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .image-modal-overlay {
+    padding: 1rem;
+  }
+  
+  .image-modal-content {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+  
+  .image-modal-img {
+    max-height: 60vh;
+  }
+  
+  .image-modal-info {
+    padding: 1rem;
+  }
+  
+  .image-modal-info h3 {
+    font-size: 1.2rem;
+  }
+  
+  .image-modal-close {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    top: 10px;
+    right: 10px;
   }
   
   .card-detail-content {

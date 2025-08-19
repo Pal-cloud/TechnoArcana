@@ -5,6 +5,8 @@
 ### Nivel 1: Visualización básica de cartas
 - **Página principal**: Muestra todas las cartas boca abajo
 - **Detalle de carta**: Al hacer clic, navega a una página con información detallada
+- **Navegación avanzada**: Sistema de flechas para moverse entre cartas con números romanos
+- **Visualización ampliada**: Modal para ver imágenes en pantalla completa
 - **API Integration**: Consume la API pública de cartas de tarot
 - **Efectos de sonido**: Sonidos atmosféricos al interactuar con las cartas
 - **Control de audio**: Botón para activar/desactivar efectos de sonido
@@ -137,13 +139,14 @@ https://6872278c76a5723aacd3cbb3.mockapi.io/api/v1/tarot
 
 ## 🛠️ Tecnologías utilizadas
 
-- **React 18**: Framework principal
-- **React Router DOM**: Navegación entre páginas
-- **Vite**: Build tool y servidor de desarrollo
-- **CSS3**: Estilos con gradientes y animaciones
+- **React 18**: Framework principal con hooks avanzados
+- **React Router DOM**: Navegación entre páginas con navegación circular
+- **Vite**: servidor de desarrollo
+- **CSS3**: animaciones y modales
 - **Fetch API**: Para consumir la API REST
 - **SweetAlert2**: Modales elegantes y personalizados
-- **Animate.css**: Animaciones CSS suaves
+- **JavaScript ES6+**: Funciones avanzadas como conversión a números romanos
+- **Responsive Design**: Optimización para todos los dispositivos
 
 ## 📱 Responsive Design
 
@@ -160,6 +163,19 @@ La aplicación está optimizada para:
 - **Componentes modulares**: Código reutilizable y mantenible
 - **Responsive**: Adaptable a todos los dispositivos
 
+## 🎯 Navegación y Visualización Avanzada
+
+### Sistema de navegación intuitivo
+- **Navegación circular**: Permite moverse entre cartas de forma continua (la última conecta con la primera)
+
+### Visualización de imágenes mejorada
+- **Modal de ampliación**: Clic en cualquier imagen de carta para verla en pantalla completa
+- **Indicador visual de zoom**: Lupa que aparece al hacer hover sobre imágenes ampliables
+- **Controles de cierre múltiples**: 
+  - Botón X en la esquina
+  - Clic fuera del modal
+  - Tecla Escape
+
 ## 🎯 Funcionalidades principales
 
 ### Página de inicio
@@ -167,14 +183,6 @@ La aplicación está optimizada para:
 - **Navegación destacada**: Botones "Cartas" y "Lectura" claramente visibles con efectos dorados
 - Loading states y manejo de errores
 - Navegación intuitiva
-
-### Detalle de carta
-- Información completa del arcano
-- Datos de la diosa contemporánea
-- **Imagen principal flotante**: Sin marco, adaptándose a las proporciones naturales
-- **Sección de diosa centrada**: Imagen y descripción visualmente alineadas al centro
-- **Efectos visuales**: Hover effects suaves y sombras elegantes
-- Navegación de vuelta
 
 ### Lectura de cartas
 - Selección guiada de 3 cartas
