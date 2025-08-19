@@ -153,22 +153,37 @@
 
 .goddess-image-credit {
   text-align: center;
-  opacity: 0.7;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 0.8rem;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  border: 1px solid rgba(102, 126, 234, 0.3);
 }
 
 .goddess-image-credit small {
-  color: #333;
+  color: #667eea;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .goddess-image-credit a {
   color: #667eea;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-weight: bold;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  background: rgba(102, 126, 234, 0.1);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 0.3rem;
 }
 
 .goddess-image-credit a:hover {
-  color: #764ba2;
-  text-decoration: underline;
+  background: rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
 .card-detail-right {
@@ -232,12 +247,7 @@
   height: auto;
   border-radius: 10px;
   display: block;
-  transition: transform 0.3s ease;
   margin-bottom: 0.5rem;
-}
-
-.goddess-image:hover {
-  transform: scale(1.02);
 }
 
 .loading,
