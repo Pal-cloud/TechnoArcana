@@ -34,11 +34,20 @@
    ```bash
    npm run dev
    ```
+   
+   La aplicación estará disponible en `http://localhost:5173`
 
-3. **Construir para producción**:
+3. **Vista previa local** (opcional):
+   ```bash
+   npm run preview
+   ```
+
+4. **Construir para producción** (solo si vas a hacer deployment):
    ```bash
    npm run build
    ```
+   
+   > **Nota**: Este comando genera una carpeta `dist` con los archivos optimizados para producción. Solo necesario si planeas desplegar la aplicación.
 
 ## 📁 Estructura del proyecto
 
