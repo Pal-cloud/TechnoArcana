@@ -170,7 +170,7 @@ npm run test:run # Ejecutar una sola vez
 - ✅ Manejo de assets (imágenes, logos)
 
 ### Resultados de tests:
-![Tests Results](public\images\prueba test.PNG)
+(public\images\prueba test.PNG)
 *Todos los tests pasando correctamente: 11 tests en 2 archivos (Header: 5 tests, Footer: 6 tests)*
 
 ```
