@@ -49,6 +49,12 @@
    
    > **Nota**: Este comando genera una carpeta `dist` con los archivos optimizados para producción. Solo necesario si planeas desplegar la aplicación.
 
+5. **Ejecutar tests**:
+   ```bash
+   npm test        # Modo watch (para desarrollo)
+   npm run test:run # Ejecutar una vez
+   ```
+
 ## 📁 Estructura del proyecto
 
 ```
@@ -133,12 +139,48 @@ https://6872278c76a5723aacd3cbb3.mockapi.io/api/v1/tarot
 
 - **React 18**: Framework principal con hooks avanzados
 - **React Router DOM**: Navegación entre páginas con navegación circular
-- **Vite**: servidor de desarrollo
-- **CSS3**: animaciones y modales
+- **Vite**: Servidor de desarrollo y build tool
+- **Vitest**: Framework de testing rápido y moderno
+- **React Testing Library**: Testing de componentes React
+- **CSS3**: Animaciones y modales
 - **Fetch API**: Para consumir la API REST
 - **SweetAlert2**: Modales elegantes y personalizados
 - **JavaScript ES6+**: Funciones avanzadas como conversión a números romanos
 - **Responsive Design**: Optimización para todos los dispositivos
+
+## 🧪 Testing
+
+El proyecto incluye tests unitarios para los componentes principales:
+
+### Tests implementados:
+- **Header Component**: Navegación, logo personal, enlaces y estructura HTML
+- **Footer Component**: Enlaces sociales, información de contacto y estructura semántica
+
+### Ejecutar tests:
+```bash
+npm test        # Modo watch - se ejecutan automáticamente al cambiar código
+npm run test:run # Ejecutar una sola vez
+```
+
+### Cobertura de tests:
+- ✅ Renderizado correcto de componentes
+- ✅ Navegación y enlaces
+- ✅ Atributos de elementos HTML
+- ✅ Estructura semántica (roles ARIA)
+- ✅ Manejo de assets (imágenes, logos)
+
+### Resultados de tests:
+![Tests Results](public\images\prueba test.PNG)
+*Todos los tests pasando correctamente: 11 tests en 2 archivos (Header: 5 tests, Footer: 6 tests)*
+
+```
+✓ src/components/Header/Header.test.jsx (5 tests) 164ms
+✓ src/components/Footer/Footer.test.jsx (6 tests) 191ms
+
+Test Files  2 passed (2)
+Tests  11 passed (11)
+Duration  2.15s
+```
 
 ## 📱 Responsive Design
 
