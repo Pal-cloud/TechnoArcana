@@ -92,29 +92,13 @@ La aplicación incluye efectos de sonido atmosféricos para mejorar la experienc
 - **Logo**: Sonido especial al pasar el mouse sobre el logo personal
 
 ### Configuración de archivos de audio:
-1. **Ubicación**: `public/sounds/`
-2. **Formatos soportados**: MP3, WAV, OGG
-3. **Archivos requeridos**:
-   - `card-hover.mp3` - Sonido de hover (0.2-0.5s)
-   - `card-click.mp3` - Sonido de click (0.3-0.8s)
-
-### Características técnicas:
-- **Control de volumen**: Volumen moderado por defecto (30%)
-- **Manejo de errores**: Funciona sin archivos de audio
-- **Precargar**: Los sonidos se precargan para reproducción instantánea
-- **Control de usuario**: Botón flotante para activar/desactivar
-
-### Fuentes recomendadas:
-- [Pixabay.com](https://pixabay.com/)
+- **Ubicación**: `public/sounds/`
+- **Archivos incluidos**: card-hover.mp3, card-click.mp3, raven.mp3
+- **Control de usuario**: Botón flotante para activar/desactivar sonidos
 
 ## 🌟 Elementos Flotantes de Fondo
 
-La aplicación incluye elementos flotantes atmosféricos que se mueven continuamente por la pantalla:
-
-### Características Técnicas:
-
-- **Eliminación preventiva**: Los elementos se eliminan 200ms antes de completar su animación
-- **Sin acumulación**: Garantiza que no se acumulen elementos en ninguna parte de la pantalla
+La aplicación incluye elementos flotantes atmosféricos que se mueven continuamente por la pantalla para crear una experiencia inmersiva.
 
 ## 🔗 API
 
